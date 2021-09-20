@@ -2,41 +2,41 @@
 
 namespace TestCase;
 
-use FashionValet\Stickie\Builder;
-use FashionValet\Stickie\Command;
+use Dbr\Ezpl\Builder;
+use Dbr\Ezpl\Command;
 
 class BuilderTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetCommandPipeMethod()
     {
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
-        $this->assertInstanceOf('\FashionValet\Stickie\Command\CommandPipeInterface', $builder->getCommandPipe());
+        $this->assertInstanceOf('\Dbr\Ezpl\Command\CommandPipeInterface', $builder->getCommandPipe());
     }
 
     public function testResetMemoryMethod()
     {
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $command = new Command\Memory\Format;
         $commandPipe->addCommand($command)->shouldBeCalled();
 
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $builder->resetMemory());
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $builder->resetMemory());
     }
 
     public function testSetLabelWidthMethod()
     {
         $width = 50;
 
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $command = new Command\Printing\Width($width);
         $commandPipe->addCommand($command)->shouldBeCalled();
 
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $builder->setLabelWidth($width));
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $builder->setLabelWidth($width));
     }
 
     public function testSetLabelHeightMethod()
@@ -44,83 +44,83 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
         $height = 45;
         $spacing = 3;
 
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $command = new Command\Printing\Height($height, $spacing);
         $commandPipe->addCommand($command)->shouldBeCalled();
 
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $builder->setLabelHeight($height, $spacing));
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $builder->setLabelHeight($height, $spacing));
     }
 
     public function testSetDensityMethod()
     {
         $density = 10;
 
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $command = new Command\Printing\Density($density);
         $commandPipe->addCommand($command)->shouldBeCalled();
 
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $builder->setDensity($density));
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $builder->setDensity($density));
     }
 
     public function testCopiesMethod()
     {
         $copies = 1;
 
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $command = new Command\Printing\Copy($copies);
         $commandPipe->addCommand($command)->shouldBeCalled();
 
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $builder->copies($copies));
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $builder->copies($copies));
     }
 
     public function testLabelStartMethod()
     {
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $command = new Command\Printing\LabelStart;
         $commandPipe->addCommand($command)->shouldBeCalled();
 
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $builder->labelStart());
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $builder->labelStart());
     }
 
     public function testLabelEndMethod()
     {
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $command = new Command\Printing\LabelEnd;
         $commandPipe->addCommand($command)->shouldBeCalled();
 
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $builder->labelEnd());
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $builder->labelEnd());
     }
 
     public function testBarcodeMethod()
     {
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $command = new Command\Image\Barcode('CODE128', 55, 10, 2, 10, 70, 0, 1, 'Foobar');
         $commandPipe->addCommand($command)->shouldBeCalled();
 
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $builder->barcode('CODE128', 55, 10, 2, 10, 70, 0, 1, 'Foobar'));
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $builder->barcode('CODE128', 55, 10, 2, 10, 70, 0, 1, 'Foobar'));
     }
 
     public function testTextMethod()
     {
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $command = new Command\Text\Font(10, 25, 120, 1, 1, 0, 0, 'Foobar');
         $commandPipe->addCommand($command)->shouldBeCalled();
 
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $builder->text(10, 25, 120, 1, 1, 0, 0, 'Foobar'));
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $builder->text(10, 25, 120, 1, 1, 0, 0, 'Foobar'));
     }
 
     public function testComposeMethod()
@@ -130,7 +130,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
         $spacing = 3;
         $density = 10;
 
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $commandFormat = new Command\Memory\Format;
@@ -167,11 +167,11 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \FashionValet\Stickie\Command\Exception\EmptyCommandException
+     * @expectedException \Dbr\Ezpl\Command\Exception\EmptyCommandException
      */
     public function testComposeThrowException()
     {
-        $commandPipe = $this->prophesize('\FashionValet\Stickie\Command\CommandPipeInterface');
+        $commandPipe = $this->prophesize('\Dbr\Ezpl\Command\CommandPipeInterface');
         $builder = new Builder($commandPipe->reveal());
 
         $builder->compose();

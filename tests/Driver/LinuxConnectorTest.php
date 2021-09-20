@@ -2,7 +2,7 @@
 
 namespace TestCase\Driver;
 
-use FashionValet\Stickie\Driver\LinuxConnector as Connector;
+use Dbr\Ezpl\Driver\LinuxConnector as Connector;
 
 class LinuxDriverTest extends \PHPUnit_Framework_TestCase
 {

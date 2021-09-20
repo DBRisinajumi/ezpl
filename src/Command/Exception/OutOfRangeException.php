@@ -1,6 +1,6 @@
 <?php
 
-namespace FashionValet\Stickie\Command\Exception;
+namespace Dbr\Ezpl\Command\Exception;
 
 use InvalidArgumentException;
 

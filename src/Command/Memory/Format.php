@@ -1,8 +1,8 @@
 <?php
 
-namespace FashionValet\Stickie\Command\Memory;
+namespace Dbr\Ezpl\Command\Memory;
 
-use FashionValet\Stickie\Command\AbstractableCommand;
+use Dbr\Ezpl\Command\AbstractableCommand;
 
 class Format extends AbstractableCommand
 {

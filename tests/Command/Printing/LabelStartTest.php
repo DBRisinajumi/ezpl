@@ -2,7 +2,7 @@
 
 namespace TestCase\Command\Printing;
 
-use FashionValet\Stickie\Command\Printing\LabelStart as Command;
+use Dbr\Ezpl\Command\Printing\LabelStart as Command;
 
 class LabelStartTest extends \PHPUnit_Framework_TestCase
 {

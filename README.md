@@ -15,8 +15,8 @@ This library was tested using **Godex G500** model and with a **50mmx45mm** labe
 ```php
 <?php
 
-use FashionValet\Stickie\Builder;
-use FashionValet\Stickie\CommandPipe;
+use Dbr\Ezpl\Builder;
+use Dbr\Ezpl\CommandPipe;
 
 $command = (new Builder(new CommandPipe))
     ->resetMemory()
@@ -56,10 +56,10 @@ E\n
 ```php
 <?php
 
-use FashionValet\Stickie\Printer;
-use FashionValet\Stickie\Builder;
-use FashionValet\Stickie\CommandPipe;
-use FashionValet\Stickie\Driver\LinuxConnector;
+use Dbr\Ezpl\Printer;
+use Dbr\Ezpl\Builder;
+use Dbr\Ezpl\CommandPipe;
+use Dbr\Ezpl\Driver\LinuxConnector;
 
 $command = (new Builder(new CommandPipe))
     ->resetMemory()

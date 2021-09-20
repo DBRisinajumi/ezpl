@@ -1,6 +1,6 @@
 <?php
 
-namespace FashionValet\Stickie\Command;
+namespace Dbr\Ezpl\Command;
 
 interface CommandPipeInterface
 {

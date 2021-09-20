@@ -1,6 +1,6 @@
 <?php
 
-namespace FashionValet\Stickie\Command\Text;
+namespace Dbr\Ezpl\Command\Text;
 
 trait SizeTrait
 {

@@ -2,7 +2,7 @@
 
 namespace TestCase\Command\Text;
 
-use FashionValet\Stickie\Command\Text\Font as Command;
+use Dbr\Ezpl\Command\Text\Font as Command;
 
 class FontTest extends \PHPUnit_Framework_TestCase
 {

@@ -2,7 +2,7 @@
 
 namespace TestCase\Command\Printing;
 
-use FashionValet\Stickie\Command\Printing\Height as Command;
+use Dbr\Ezpl\Command\Printing\Height as Command;
 
 class HeightTest extends \PHPUnit_Framework_TestCase
 {
@@ -54,7 +54,7 @@ class HeightTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \FashionValet\Stickie\Command\Exception\ExpectedIntegerException
+     * @expectedException \Dbr\Ezpl\Command\Exception\ExpectedIntegerException
      */
     public function testHeightThrowInvalidArgumentException()
     {
@@ -62,7 +62,7 @@ class HeightTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \FashionValet\Stickie\Command\Exception\ExpectedIntegerException
+     * @expectedException \Dbr\Ezpl\Command\Exception\ExpectedIntegerException
      */
     public function testSpacingThrowInvalidArgumentException()
     {

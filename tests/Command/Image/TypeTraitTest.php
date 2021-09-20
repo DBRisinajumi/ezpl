@@ -2,7 +2,7 @@
 
 namespace TestCase\Command\Image;
 
-use FashionValet\Stickie\Command\Image\TypeTrait;
+use Dbr\Ezpl\Command\Image\TypeTrait;
 
 class TypeTraitTest extends \PHPUnit_Framework_TestCase
 {

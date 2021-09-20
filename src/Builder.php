@@ -1,6 +1,6 @@
 <?php
 
-namespace FashionValet\Stickie;
+namespace Dbr\Ezpl;
 
 class Builder implements BuilderInterface
 {

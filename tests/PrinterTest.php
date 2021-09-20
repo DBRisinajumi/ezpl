@@ -2,7 +2,7 @@
 
 namespace TestCase;
 
-use FashionValet\Stickie\Printer;
+use Dbr\Ezpl\Printer;
 
 class PrinterTest extends \PHPUnit_Framework_TestCase
 {
@@ -10,8 +10,8 @@ class PrinterTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $connector = $this->prophesize('\FashionValet\Stickie\Driver\ConnectorInterface');
-        $builder = $this->prophesize('\FashionValet\Stickie\BuilderInterface');
+        $connector = $this->prophesize('\Dbr\Ezpl\Driver\ConnectorInterface');
+        $builder = $this->prophesize('\Dbr\Ezpl\BuilderInterface');
 
         $this->printer = new Printer($connector->reveal(), $builder->reveal());
     }
@@ -23,11 +23,11 @@ class PrinterTest extends \PHPUnit_Framework_TestCase
 
     public function testPrinterMethod()
     {
-        $this->assertInstanceOf('\FashionValet\Stickie\Driver\ConnectorInterface', $this->printer->printer());
+        $this->assertInstanceOf('\Dbr\Ezpl\Driver\ConnectorInterface', $this->printer->printer());
     }
 
     public function testBuilderMethod()
     {
-        $this->assertInstanceOf('\FashionValet\Stickie\BuilderInterface', $this->printer->builder());
+        $this->assertInstanceOf('\Dbr\Ezpl\BuilderInterface', $this->printer->builder());
     }
 }

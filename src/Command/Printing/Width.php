@@ -1,8 +1,8 @@
 <?php
 
-namespace FashionValet\Stickie\Command\Printing;
+namespace Dbr\Ezpl\Command\Printing;
 
-use FashionValet\Stickie\Command\AbstractableCommand;
+use Dbr\Ezpl\Command\AbstractableCommand;
 
 class Width extends AbstractableCommand
 {

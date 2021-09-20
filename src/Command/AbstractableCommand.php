@@ -1,6 +1,6 @@
 <?php
 
-namespace FashionValet\Stickie\Command;
+namespace Dbr\Ezpl\Command;
 
 abstract class AbstractableCommand implements CommandInterface
 {
@@ -47,7 +47,7 @@ abstract class AbstractableCommand implements CommandInterface
      *
      * @return boolean        [description]
      *
-     * @throw \FashionValet\Stickie\Command\Exception\ExpectedIntegerException
+     * @throw \Dbr\Ezpl\Command\Exception\ExpectedIntegerException
      */
     protected function isInteger($value)
     {
@@ -67,7 +67,7 @@ abstract class AbstractableCommand implements CommandInterface
      *
      * @return boolean        [description]
      *
-     * @throw \FashionValet\Stickie\Command\Exception\OutOfRangeException
+     * @throw \Dbr\Ezpl\Command\Exception\OutOfRangeException
      */
     protected function isInRange($value, $min, $max)
     {

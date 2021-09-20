@@ -2,7 +2,7 @@
 
 namespace TestCase\Command\Printing;
 
-use FashionValet\Stickie\Command\Printing\LabelEnd as Command;
+use Dbr\Ezpl\Command\Printing\LabelEnd as Command;
 
 class LabelEndTest extends \PHPUnit_Framework_TestCase
 {

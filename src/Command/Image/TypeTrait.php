@@ -1,6 +1,6 @@
 <?php
 
-namespace FashionValet\Stickie\Command\Image;
+namespace Dbr\Ezpl\Command\Image;
 
 trait TypeTrait
 {

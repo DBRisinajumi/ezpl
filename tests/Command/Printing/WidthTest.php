@@ -2,7 +2,7 @@
 
 namespace TestCase\Command\Printing;
 
-use FashionValet\Stickie\Command\Printing\Width as Command;
+use Dbr\Ezpl\Command\Printing\Width as Command;
 
 class WidthTest extends \PHPUnit_Framework_TestCase
 {
@@ -36,7 +36,7 @@ class WidthTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \FashionValet\Stickie\Command\Exception\ExpectedIntegerException
+     * @expectedException \Dbr\Ezpl\Command\Exception\ExpectedIntegerException
      */
     public function testInvalidArgumentException()
     {

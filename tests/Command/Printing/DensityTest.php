@@ -2,7 +2,7 @@
 
 namespace TestCase\Command\Printing;
 
-use FashionValet\Stickie\Command\Printing\Density as Command;
+use Dbr\Ezpl\Command\Printing\Density as Command;
 
 class DensityTest extends \PHPUnit_Framework_TestCase
 {
@@ -36,7 +36,7 @@ class DensityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \FashionValet\Stickie\Command\Exception\ExpectedIntegerException
+     * @expectedException \Dbr\Ezpl\Command\Exception\ExpectedIntegerException
      * @return [type] [description]
      */
     public function testExpectedIntegerException()
@@ -45,7 +45,7 @@ class DensityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \FashionValet\Stickie\Command\Exception\OutOfRangeException
+     * @expectedException \Dbr\Ezpl\Command\Exception\OutOfRangeException
      * @return [type] [description]
      */
     public function testOutOfRangeException()

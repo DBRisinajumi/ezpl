@@ -1,8 +1,8 @@
 <?php
 
-namespace FashionValet\Stickie\Command\Service;
+namespace Dbr\Ezpl\Command\Service;
 
-use FashionValet\Stickie\Command\AbstractableCommand;
+use Dbr\Ezpl\Command\AbstractableCommand;
 
 /**
  * Status immediate response command

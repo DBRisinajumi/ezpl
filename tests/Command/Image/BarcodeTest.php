@@ -2,7 +2,7 @@
 
 namespace TestCase\Command\Image;
 
-use FashionValet\Stickie\Command\Image\Barcode as Command;
+use Dbr\Ezpl\Command\Image\Barcode as Command;
 
 class BarcodeTest extends \PHPUnit_Framework_TestCase
 {

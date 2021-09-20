@@ -1,8 +1,8 @@
 <?php
 
-namespace FashionValet\Stickie\Command\Text;
+namespace Dbr\Ezpl\Command\Text;
 
-use FashionValet\Stickie\Command\AbstractableCommand;
+use Dbr\Ezpl\Command\AbstractableCommand;
 
 class Font extends AbstractableCommand
 {

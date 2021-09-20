@@ -1,5 +1,5 @@
 {
-    "name": "fashionvalet/stickie",
+    "name": "dbr/ezpl",
     "type": "library",
     "description": "EZPL command generator for thermal label printer",
     "minimum-stability": "stable",
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "FashionValet\\Stickie\\": "src/",
+            "Dbr\\Stickie\\": "src/",
             "TestCase\\": "tests/"
         }
     }

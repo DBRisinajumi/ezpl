@@ -1,6 +1,6 @@
 <?php
 
-namespace FashionValet\Stickie\Driver;
+namespace Dbr\Ezpl\Driver;
 
 interface ConnectorInterface
 {

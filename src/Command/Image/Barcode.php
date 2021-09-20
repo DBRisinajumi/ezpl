@@ -1,8 +1,8 @@
 <?php
 
-namespace FashionValet\Stickie\Command\Image;
+namespace Dbr\Ezpl\Command\Image;
 
-use FashionValet\Stickie\Command\AbstractableCommand;
+use Dbr\Ezpl\Command\AbstractableCommand;
 
 class Barcode extends AbstractableCommand
 {

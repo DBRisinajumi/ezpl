@@ -2,7 +2,7 @@
 
 namespace TestCase\Command;
 
-use FashionValet\Stickie\Command\CommandPipe;
+use Dbr\Ezpl\Command\CommandPipe;
 
 class CommandPipeTest extends \PHPUnit_Framework_TestCase
 {
@@ -20,17 +20,17 @@ class CommandPipeTest extends \PHPUnit_Framework_TestCase
 
     public function testAddAndGetCommandMethod()
     {
-        $command = $this->prophesize('\FashionValet\Stickie\Command\CommandInterface');
+        $command = $this->prophesize('\Dbr\Ezpl\Command\CommandInterface');
         $command->toCommand()->shouldBeCalled()->willReturn('~MDEL');
 
-        $this->assertInstanceOf('\FashionValet\Stickie\Command\CommandPipeInterface', $this->commandPipe->addCommand($command->reveal()));
+        $this->assertInstanceOf('\Dbr\Ezpl\Command\CommandPipeInterface', $this->commandPipe->addCommand($command->reveal()));
 
         $this->assertEquals(['~MDEL'], $this->commandPipe->getCommands());
     }
 
     public function testRemoveCommandMethod()
     {
-        $command = $this->prophesize('\FashionValet\Stickie\Command\CommandInterface');
+        $command = $this->prophesize('\Dbr\Ezpl\Command\CommandInterface');
         $command->toCommand()->shouldBeCalledTimes(2)->willReturn('~MDEL');
 
         $this->commandPipe->addCommand($command->reveal());
@@ -42,7 +42,7 @@ class CommandPipeTest extends \PHPUnit_Framework_TestCase
 
     public function testFlushCommandsMethod()
     {
-        $this->assertInstanceOf('\FashionValet\Stickie\Command\CommandPipeInterface', $this->commandPipe->flushCommands());
+        $this->assertInstanceOf('\Dbr\Ezpl\Command\CommandPipeInterface', $this->commandPipe->flushCommands());
 
         $this->assertEquals([], $this->commandPipe->getCommands());
     }

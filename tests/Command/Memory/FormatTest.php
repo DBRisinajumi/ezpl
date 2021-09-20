@@ -2,7 +2,7 @@
 
 namespace TestCase\Command\Memory;
 
-use FashionValet\Stickie\Command\Memory\Format as Command;
+use Dbr\Ezpl\Command\Memory\Format as Command;
 
 class FormatTest extends \PHPUnit_Framework_TestCase
 {
