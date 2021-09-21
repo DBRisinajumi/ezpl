@@ -57,7 +57,7 @@ class Status extends AbstractableCommand
         return $this->getControlPrefix() . $this->getCode();
     }
 
-    public function getResponseLabel(string $responseCode)
+    public static function getResponseLabel(string $responseCode)
     {
         return self::STATUS_LABELS[$responseCode] ?? $responseCode;
     }

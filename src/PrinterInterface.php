@@ -2,11 +2,10 @@
 
 namespace Dbr\Ezpl;
 
-use Driver\ConnectorInterface;
-
 interface PrinterInterface
 {
     public function printer();
-
-    public function generate();
+    public function builder(): BuilderInterface;
+    public function send(BuilderInterface $builder): void;
+    public function sendAndRead(BuilderInterface $builder);
 }

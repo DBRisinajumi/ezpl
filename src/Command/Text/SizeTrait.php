@@ -2,9 +2,11 @@
 
 namespace Dbr\Ezpl\Command\Text;
 
+use Dbr\Ezpl\Command\Exception\OutOfRangeException;
+
 trait SizeTrait
 {
-    protected function convert($size)
+    protected function convert($size): string
     {
         switch ($size) {
             case 6:
@@ -31,6 +33,8 @@ trait SizeTrait
             case 30:
                 return 'H';
                 break;
+            default:
+                throw new OutOfRangeException("Font size must be 6,8,10,12,14,18,24,30");
         }
     }
 }

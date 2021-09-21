@@ -14,19 +14,26 @@ class Printer implements PrinterInterface
         $this->builder = $builder;
     }
 
-    public function printer()
+    public function printer(): Driver\ConnectorInterface
     {
         return $this->printer;
     }
 
-    public function builder()
+    public function builder(): BuilderInterface
     {
         return $this->builder;
     }
 
-    public function generate()
+    public function send(BuilderInterface $builder): void
     {
+        $this->builder = $builder;
         $commands = $this->builder->compose();
-        $this->printer->send($commands)->close();
+        $this->printer->send($commands);
+    }
+
+    public function sendAndRead(BuilderInterface $builder)
+    {
+        $this->send($builder);
+        return $this->printer->read();
     }
 }

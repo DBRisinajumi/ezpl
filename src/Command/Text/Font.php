@@ -10,18 +10,25 @@ class Font extends AbstractableCommand
 
     protected $code ='A';
 
-    protected $font = 10;
+    /** @var string */
+    protected $font = 'C'; //size 10
 
+    /** @var int */
     protected $horizontal = 0;
 
+    /** @var int */
     protected $vertical = 0;
 
+    /** @var int */
     protected $magnifyHorizontal = 0;
 
+    /** @var int */
     protected $magnifyVertical = 0;
 
+    /** @var int */
     protected $gap = 0;
 
+    /** @var int */
     protected $rotation = 0;
 
     protected $value;
@@ -59,37 +66,37 @@ class Font extends AbstractableCommand
         $this->value = $value;
     }
 
-    public function getFont()
+    public function getFont(): string
     {
         return $this->font;
     }
 
-    public function getHorizontal()
+    public function getHorizontal(): int
     {
         return $this->horizontal;
     }
 
-    public function getVertical()
+    public function getVertical(): int
     {
         return $this->vertical;
     }
 
-    public function getMagnifyHorizontal()
+    public function getMagnifyHorizontal(): int
     {
         return $this->magnifyHorizontal;
     }
 
-    public function getMagnifyVertical()
+    public function getMagnifyVertical(): int
     {
         return $this->magnifyVertical;
     }
 
-    public function getGap()
+    public function getGap(): int
     {
         return $this->gap;
     }
 
-    public function getRotation()
+    public function getRotation(): int
     {
         return $this->rotation;
     }
@@ -99,7 +106,7 @@ class Font extends AbstractableCommand
         return $this->value;
     }
 
-    public function toCommand()
+    public function toCommand(): string
     {
         $commands = [
             $this->getCode().$this->getFont(),
@@ -112,6 +119,6 @@ class Font extends AbstractableCommand
             $this->getValue()
         ];
 
-        return implode(', ', $commands);
+        return implode(',', $commands);
     }
 }
