@@ -3,6 +3,7 @@
 namespace Dbr\Ezpl;
 
 use Dbr\Ezpl\Command\CommandPipeInterface;
+use Dbr\Ezpl\Command\Draw\Rectangle;
 use Dbr\Ezpl\Command\Service\Status;
 
 class Builder implements BuilderInterface
@@ -93,6 +94,17 @@ class Builder implements BuilderInterface
     {
         $this->commandPipe->addCommand(new Command\Text\Font($size, $horizontal, $vertical, $magnifyHorizontal, $magnifyVertical, $gap, $rotation, $value));
 
+        return $this;
+    }
+    public function rectangle(
+        int $horizontal,
+        int $vertical,
+        int $horizontal1,
+        int $vertical1,
+        int $thicknessLeftRightBorder = 2,
+        int $thicknessUpperBottomBorder = 2
+    ) : self {
+        $this->commandPipe->addCommand(new Rectangle($horizontal, $vertical, $horizontal1, $vertical1, $thicknessLeftRightBorder, $thicknessUpperBottomBorder));
         return $this;
     }
 

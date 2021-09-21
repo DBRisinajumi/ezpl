@@ -10,8 +10,8 @@ use Dbr\Ezpl\Printer;
 require '../../../autoload.php';
 
 $qrCode = (new QRCode('P100022342'))
-    ->setHorizontal(10)
-    ->setVertical(10)
+    ->setHorizontal(20)
+    ->setVertical(20)
     ->setInputMode(QRCode::INPUT_MODE_MIXING)
     ->setType(QRCode::TYPE_ORIGINAL)
     ->setErrorLevel(QRCode::ERROR_CORRECTION_MEDIUM)
@@ -22,11 +22,12 @@ $qrCode = (new QRCode('P100022342'))
 
 $command = (new Builder(new CommandPipe()))
     ->resetMemory()
-    ->setLabelHeight(80,2)
+    ->setLabelHeight(80, 2)
     ->setLabelWidth(80)
     ->setDensity(10)
     ->copies(1)
     ->labelStart()
+    ->rectangle(10,10,637,637,3,3)
     ->qrcode($qrCode)
     ->text(14, 250, 10, 1, 1, 0, 0, '2021-09-20')
     ->text(18, 250, 70, 1, 1, 0, 0, '11.000 M3')
@@ -35,9 +36,9 @@ $command = (new Builder(new CommandPipe()))
     ->labelEnd();
 
 $connector = new NetworkConnector('192.168.88.228');
-$printer = new Printer($connector, $command);
-$compose = $printer->builder()->compose();
-echo str_replace("\r",PHP_EOL,$compose) . PHP_EOL;
+$printer = new Printer($connector);
+//$compose = $printer->builder()->compose();
+//echo str_replace("\r",PHP_EOL,$compose) . PHP_EOL;
 $printer->send($command);
 
 $c = new Status();
