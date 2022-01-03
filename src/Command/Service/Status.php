@@ -52,6 +52,51 @@ class Status extends AbstractableCommand
     ];
     protected $code = 'S,CHECK';
 
+    /** @var string */
+    public $responseCode;
+
+    public function __construct(string $responseCode = '')
+    {
+        $this->responseCode = $responseCode;
+    }
+
+    public function getLabel()
+    {
+        return self::STATUS_LABELS[$this->responseCode] ?? $this->responseCode;
+    }
+
+    public function isOk(): bool
+    {
+        return $this->responseCode === self::STATUS_READY;
+    }
+
+    public function isPause(): bool
+    {
+        return $this->responseCode === self::STATUS_PAUSE;
+    }
+
+    public function isInProcess(): bool
+    {
+        return $this->responseCode === self::STATUS_PRINTER_IS_PRINTING
+            || $this->responseCode === self::STATUS_DATA_IN_PROCESS;
+    }
+
+    public function isError(): bool
+    {
+        if ($this->isOk()) {
+            return false;
+        }
+
+        if ($this->isInProcess()) {
+            return false;
+        }
+
+        if ($this->isPause()) {
+            return false;
+        }
+        return true;
+    }
+
     public function toCommand()
     {
         return $this->getControlPrefix() . $this->getCode();

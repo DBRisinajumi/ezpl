@@ -35,21 +35,23 @@ $command = (new Builder(new CommandPipe()))
     ->text(14, 10, 260, 1, 1, 0, 0, 'CLT60 C 3(20-20-20)V/V/5000/7000')
     ->labelEnd();
 
-$connector = new NetworkConnector('192.168.88.228');
+$connector = new NetworkConnector('192.168.88.198');
 $printer = new Printer($connector);
 //$compose = $printer->builder()->compose();
 //echo str_replace("\r",PHP_EOL,$compose) . PHP_EOL;
 $printer->send($command);
 
-$c = new Status();
+
 $command = (new Builder(new CommandPipe()))->requestStatus();
 $r = $printer->sendAndRead($command);
+$c = new Status($r);
 echo 'r: ' . bin2hex($r) . PHP_EOL;
-echo 'label: ' . Status::getResponseLabel($r) . PHP_EOL;
+echo 'label: ' . $c->getLabel() . PHP_EOL;
 sleep(3);
 $r = $printer->sendAndRead($command);
+$c = new Status($r);
 echo 'r: ' . bin2hex($r) . PHP_EOL;
-echo 'label: ' . Status::getResponseLabel($r) . PHP_EOL;
+echo 'label: ' . $c->getLabel() . PHP_EOL;
 
 
 $connector->close();

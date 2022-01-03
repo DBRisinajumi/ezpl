@@ -30,6 +30,11 @@ class Printer implements PrinterInterface
         $this->printer->send($commands);
     }
 
+    public function sendCommands(string $commands): void
+    {
+        $this->printer->send($commands);
+    }
+
     public function sendAndRead(BuilderInterface $builder)
     {
         $this->send($builder);
